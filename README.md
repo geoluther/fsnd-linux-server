@@ -22,4 +22,4 @@ iii. A summary of software you installed and configuration changes made.
 iv. A list of any third-party resources you made use of to complete this project.
 - digital ocean's apache server, flask, mod_wsgi, psql setup documentation
 
-##Note: this repo is saved in ~/FlaskApp, not in /var/www/
+### Note: this repo is saved in ~/FlaskApp, not in /var/www/
