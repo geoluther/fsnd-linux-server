@@ -1,0 +1,29 @@
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name }}">
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}</textarea>
+
+					<label for="price">Image URL:</label>
+					<div class="input-group">
+						<input type ="text" maxlength="100" class="form-control" name="picture" value="{{item.picture}}">
+					</div>
+
+					<label for="category">Category:</label>
+					<select name="category">
+					<option value="Basses">Basses</option>
+				    <option value="Guitars">Guitars</option>
+				    <option value="Classic Keyboards">Classic Keyboards</option>
+				    </select>
+
+				</div>
+
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+					<a href = '{{url_for('showRestaurants')}}'>
+						<button class="btn btn-default delete">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+			</form>

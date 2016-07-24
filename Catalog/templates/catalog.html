@@ -1,0 +1,71 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="row divider blue">
+	<div class="col-sm-12"></div>
+</div>
+
+<div class="row banner main">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-11 padding-none">
+		<h1>Classic Music Gear</h1>
+	</div>
+</div>
+
+<div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+
+	<ul>
+		{% for message in messages %}
+		<li> <strong> {{ message }} </strong> </li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+
+</div>
+
+
+<div class="row padding-top">
+	<div class="col-sm-3">
+	<a href = "{{url_for('newItem')}}">
+	New Item</a></div>
+	<div class="col-sm-6 padding-none"></div>
+	<div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+	<div class="col-sm-2 category-list">
+		<h3>Categories</h3>
+		<ul>
+		{% for category in categories %}
+			<!-- fix urls for items -->
+			<li>
+			<a href = "{{url_for('showCategory', category_name = category.name)}}">
+			{{category.name}}
+			</a></li>
+		{% endfor %}
+		</ul>
+	</div>
+
+	<div class="col-sm-6 category-list">
+		<h3>Recently Added Items</h3>
+		<ul>
+		{% for item in recents %}
+			<li>
+			<a href = "{{url_for('showItem', item_name= item.name)}}">
+			{{item.name}}</a>,
+			<!-- <a href="#"> -->
+			<a href = "{{url_for('showCategory', category_name = item.category.name)}}">
+			<i>{{ item.category.name }}</i>
+			</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
+
